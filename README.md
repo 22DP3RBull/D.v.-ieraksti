@@ -1,60 +1,57 @@
-# D.v.-ieraksti
-Projekta darbs programmēšanā
+# D.V. Ieraksti
+**Projekta darbs programmēšanā**  
+**Dienesta viesnīcas ieraksti**
 
-Dienesta viesnīcas ieraksti  
+---
 
-##v1 
+## v1
 
-###Šobrīd ir ieejot dienesta viesnīca tur dzīvojošajiem jāierakstās ka ir ieradies (vārds uzvārds, laiks un datums) un tā pat kad piem. brauc mājās uz brīvdienām ir jāizrakstās.  
+### Esošā sistēma
 
-Mana ideja ir uztaisīt aplikāciju kas padarītu to vieglāk un parocīgāk - 
+Šobrīd, ieejot dienesta viesnīcā, tajā dzīvojošajiem ir jāierakstās, norādot savu vārdu, uzvārdu, laiku un datumu. Tāpat, ja iemītnieks dodas mājās uz brīvdienām, ir nepieciešams izrakstīties. Tas tiek darīts manuāli, pierakstot visu kladē.
 
-Administratori var pievienot cilvēkus datubāzē gada sākumā un noņemt tos ja kāds vairs nedzīvo. Būs arī opcija redzēt uz to brīdi dienesta viesnīcā esošos cilvēkus. 
+### Idejas apraksts
 
-D. v. iemītnieki savukārt katru reizi kad ienāk d. v. var izvēlēties aplikācijā istabiņas nr. Vārdu un uzvārdu un opcijas izrakstīties vai ierakstīties (laiks būs reģistrēts brīdī kad iemītnieks būs uzspiedis gala pogu “ierakstīties” vai “izrakstīties”) . Tas tiks saglabāts datubāzē. 
+Mans mērķis ir izveidot aplikāciju, kas šo procesu padarītu ērtāku un efektīvāku.
 
-###'rgb(0,300,0)Plusi: '
+- **Administratori** varēs pievienot cilvēkus datubāzē gada sākumā un noņemt tos, ja kāds vairs nedzīvo dienesta viesnīcā.
+- Būs opcija apskatīt visus esošos dienesta viesnīcā uz to brīdi dzīvojošos cilvēkus.
+- **Iemītnieki** katru reizi, kad ienāk dienesta viesnīcā, varēs izvēlēties savas istabas numuru un norādīt savu vārdu un uzvārdu. Tālāk izvēlēsies iespēju "ierakstīties" vai "izrakstīties", kur laiks un datums automātiski reģistrēsies brīdī, kad lietotājs nospiedīs atbilstošo pogu.
 
-Daudz ātrāk nekā šobrīd rakstot kladē 
+### Plusi:
 
-Nebūtu jāizmanto papīrs kas samazinātu papīra lietojumu 
+- Ātrāka sistēma nekā pašreizējā manuālā metode ar kladi.
+- Samazināts papīra lietojums.
+- Vadītājiem un dežurantēm būs vieglāk uzraudzīt, kas atrodas dienesta viesnīcā.
 
-Vieglāk pārredzams kas ir un kas nav šobrīd dienesta viesnīcā vadītājai vai dežurantēm 
+### Mīnusi:
 
- 
+- Kāds varētu ļaunprātīgi ierakstīties vai izrakstīties cita vietā.
+- Nepieciešama ierīce, uz kuras uzinstalēt aplikāciju.
 
-###'rgb(0,0,300)Mīnusi: '
+---
 
-Kāds varētu ļaunprātīgi izmantot un ierakstīties vai izrakstīties cita vietā 
+## v2
 
-Nepieciešama ierīce uz kuras uzinstalēt šādu aplikāciju 
+### Paplašinātā versija
 
- 
+Tā kā katram dienesta viesnīcas iemītniekam ir RVT kartiņa, un tās ir programmētas tā, lai iemītnieks var piekļūt tikai savam stāvam, es apsveru iespēju integrēt kartiņu sistēmu ar aplikāciju.
 
- 
+Ja kartiņās ir saglabāts vismaz vārds un uzvārds, tad sistēmu varētu savienot ar RFID pīkstuli. Tas ļautu, izmantojot kartiņu, automātiski identificēt iemītnieku datubāzē, izvēloties istabiņu, kurā tas ir reģistrēts. Lietotājam atliktu tikai izvēlēties "ierakstīties" vai "izrakstīties".
 
-##v2 
+Šī opcija prasa papildu resursus un tehnisko palīdzību no administrācijas, kas izprot kartiņu un pīkstuļu darbību. Tomēr šī būtu progresīvāka un ērtāka sistēma.
 
-Par cik ir RVT kartiņas katram no iemītniekiem un tās ir programmētas lai stāvā dzīvojošais var tikt tikai savā stāva un citos nē, es nezinu vai tajās ir ieprogrammēta istabiņa vai vārds un uzvārds vai kā bet ja ir vismaz vārds un uzvārds tad varētu vienkārši savienot pīkstuli ar aplikāciju un izmantot kartiņu un tā automātiski atrod iemītnieku datu bāzē un paņem istabiņu kurā tas ir reģistrēts un paliks tik izvēlēties opciju ierakstīties vai izrakstīties. Bet par cik man nav informācijas par datiem kas ir savienoti ar katru kartiņu, nezinu kā to uzprogrammēt un nezinu kā arī pīkstuļi ir programmēti šī opcija ir opcionāla un nav kā galvenā ideja. Ja kaut kas šāds ir labāka doma tad būs nepieciešama palīdzība no administrācijas kas saprot kā to uzprogrammēt un kam ir atļauja pie visa tā. Bet šī būtu idejas 2. versija kura ir advancētāka nekā vienkārši saspiežot aplikācijā lodziņos istabu vārdu uzvārdu un izrakstīties vai ierakstīties. 
+### Plusi:
 
- 
+- Vēl ātrāka un ērtāka sistēma nekā 1. versijā.
+- Drošāka, jo neviens cits nevarētu ierakstīties vai izrakstīties cita vietā.
 
-###'rgb(0,300,0)Plusi:'
+### Mīnusi:
 
-Pat ātrāk un parocīgāk nekā 1. versija aplikācijai 
+- Iespējams, būs jāpārprogrammē kartiņas.
+- Jāuzprogrammē un jāsavieno pīkstuļi ar aplikāciju, kas var būt tehniski sarežģīti.
 
-Drošāk jo neviens cits nevarētu ierakstīties vai izrakstīties cita vietā 
+---
 
-###'rgb(0,0,300)Mīnusi: '
-
-Ja nepieciešams būtu jāpārprogrammē kartiņas 
-
-Jāuzprogrammē pīkstuļi un jāsavieno tie ar aplikāciju kas varētu būt sarežģīti 
-
- 
-
- 
-
- 
-
-Raiens Bullītis DP3-3 
+Raiens Bullītis  
+DP3-3
