@@ -1,0 +1,273 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+}
+
+header {
+    background: linear-gradient(45deg, #1e3a8a, #60a5fa); /* Gradient background */
+    color: white;
+    padding: 1em;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text-shadow */
+    position: relative;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 2s ease, width 2s ease, height 2s ease;
+    pointer-events: none; /* Ensure the pseudo-element doesn't interfere with hover */
+    
+}
+
+header:hover::before {
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #60a5fa; /* Light Blue */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px; /* Rounded corners */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #dcdcdc; /* Light Gray */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.menu i {
+    font-size: 24px;
+    color: white;
+}
+
+main {
+    flex: 1;
+    padding: 2em;
+    text-align: center;
+}
+
+main h1, main h2 {
+    color: #1e3a8a; /* Blue */
+}
+
+main p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+main ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+}
+
+main ul li {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #1e3a8a; /* Blue */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #60a5fa; /* Light Blue */
+}
+
+.start-work-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1e3a8a; /* Blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.start-work-button:hover {
+    background-color: #60a5fa; /* Light Blue */
+    transform: scale(1.05);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: linear-gradient(to right, #2c3e50, #4a4a4a); /* Dark gradient */
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode header {
+    background: linear-gradient(45deg, #0d1b2a, #1b263b); /* Dark gradient */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Darker text-shadow */
+}
+
+body.dark-mode nav a {
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode nav a:hover {
+    color: #a0c4ff; /* Light blue */
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #3a3a3a; /* Dark background */
+}
+
+body.dark-mode .dropdown-content a {
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: #555; /* Darker gray */
+}
+
+body.dark-mode footer {
+    background-color: #0d1b2a; /* Dark background */
+}
+
+body.dark-mode footer a {
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode footer a:hover {
+    color: #a0c4ff; /* Light blue */
+}
+
+body.dark-mode .start-work-button {
+    background-color: #0d1b2a; /* Dark background */
+}
+
+body.dark-mode .start-work-button:hover {
+    background-color: #1b263b; /* Darker background */
+}
+
+body.dark-mode main h1, 
+body.dark-mode main p {
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Dark mode toggle button styles */
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #242424; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #313131; /* Light Blue */
+    transform: scale(1.05);
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #929292; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background-color: #bbbbbb; /* Darker background */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 250px;
+        background-color: rgba(97, 97, 97, 0.9);
+        transition: right 0.3s ease;
+        padding-top: 60px;
+        align-items: flex-start; /* Align items from top to bottom */
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav a {
+        margin: 10px 20px;
+        text-align: left;
+    }
+}
