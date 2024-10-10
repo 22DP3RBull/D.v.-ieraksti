@@ -53,5 +53,11 @@ Ja kartiņās ir saglabāts vismaz vārds un uzvārds, tad sistēmu varētu savi
 
 ---
 
+## 3. kursa versija (WEB)
+
+  ### V1 bet taisīta kā tīmekļa vietne un kopā ar portfolio un citām sadaļām.
+
+---
+
 Raiens Bullītis  
 DP3-3
