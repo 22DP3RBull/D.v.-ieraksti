@@ -10,37 +10,41 @@ body {
 }
 
 header {
-    background: linear-gradient(45deg, #1e3a8a, #60a5fa); /* Gradient background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e3a8a;
     color: white;
     padding: 1em;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text-shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
+}
+
+header h1 {
+    margin: 0;
 }
 
 header::before {
     content: '';
     position: absolute;
-    top: -20px;
-    width: 0;
-    height: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 2s ease, width 2s ease, height 2s ease;
-    pointer-events: none; /* Ensure the pseudo-element doesn't interfere with hover */
-    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    z-index: -1; 
 }
 
 header:hover::before {
-    width: 400px;
-    height: 400px;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scaleX(1);
 }
 
 nav {
     display: flex;
-    justify-content: center;
     gap: 15px;
 }
 
@@ -52,7 +56,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #60a5fa; /* Light Blue */
+    color: #60a5fa;
 }
 
 .dropdown {
@@ -67,7 +71,7 @@ nav a:hover {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
 }
 
 .dropdown-content a {
@@ -78,7 +82,7 @@ nav a:hover {
 }
 
 .dropdown-content a:hover {
-    background-color: #dcdcdc; /* Light Gray */
+    background-color: #dcdcdc;
 }
 
 .dropdown:hover .dropdown-content {
@@ -105,7 +109,7 @@ main {
 }
 
 main h1, main h2 {
-    color: #1e3a8a; /* Blue */
+    color: #1e3a8a;
 }
 
 main p {
@@ -119,8 +123,8 @@ main p {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    max-width: 300px; /* Added max-width */
-    max-height: 300px; /* Added max-height */
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .image-container:hover {
@@ -138,7 +142,7 @@ main img {
 }
 
 footer {
-    background-color: #1e3a8a; /* Blue */
+    background-color: #1e3a8a;
     color: white;
     text-align: center;
     padding: 1em;
@@ -155,13 +159,13 @@ footer a {
 }
 
 footer a:hover {
-    color: #60a5fa; /* Light Blue */
+    color: #60a5fa;
 }
 
 .start-work-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #1e3a8a; /* Blue */
+    background-color: #1e3a8a;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -169,99 +173,115 @@ footer a:hover {
 }
 
 .start-work-button:hover {
-    background-color: #60a5fa; /* Light Blue */
+    background-color: #60a5fa;
     transform: scale(1.05);
 }
 
-/* Dark mode styles for main h1 and p */
 body.dark-mode main h1, 
-body.dark-mode main p {
-    color: #e0e0e0; /* Light text color */
-}
-
-/* Dark mode styles for other text elements */
+body.dark-mode main p,
 body.dark-mode main h2,
 body.dark-mode main ul li {
-    color: #e0e0e0; /* Light text color */
+    color: #e0e0e0;
 }
+
 body.dark-mode {
-    background: linear-gradient(to right, #2c3e50, #4a4a4a); /* Dark gradient */
-    color: #e0e0e0; /* Light text color */
+    background: linear-gradient(to right, #2c3e50, #4a4a4a);
+    color: #e0e0e0;
 }
 
 body.dark-mode header {
-    background: linear-gradient(45deg, #0d1b2a, #1b263b); /* Dark gradient */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Darker text-shadow */
+    background: linear-gradient(45deg, #0d1b2a, #1b263b);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 body.dark-mode nav a {
-    color: #e0e0e0; /* Light text color */
+    color: #e0e0e0;
 }
 
 body.dark-mode nav a:hover {
-    color: #a0c4ff; /* Light blue */
+    color: #a0c4ff;
 }
 
 body.dark-mode .dropdown-content {
-    background-color: #3a3a3a; /* Dark background */
+    background-color: #3a3a3a;
 }
 
 body.dark-mode .dropdown-content a {
-    color: #e0e0e0; /* Light text color */
+    color: #e0e0e0;
 }
 
 body.dark-mode .dropdown-content a:hover {
-    background-color: #555; /* Darker gray */
+    background-color: #555;
 }
 
 body.dark-mode footer {
-    background-color: #0d1b2a; /* Dark background */
+    background-color: #0d1b2a;
 }
 
 body.dark-mode footer a {
-    color: #e0e0e0; /* Light text color */
+    color: #e0e0e0;
 }
 
 body.dark-mode footer a:hover {
-    color: #a0c4ff; /* Light blue */
+    color: #a0c4ff;
 }
 
 body.dark-mode .start-work-button {
-    background-color: #0d1b2a; /* Dark background */
+    background-color: #0d1b2a;
 }
 
 body.dark-mode .start-work-button:hover {
-    background-color: #1b263b; /* Darker background */
+    background-color: #1b263b;
 }
 
 #dark-mode-toggle {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: #242424; /* Blue */
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #242424;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    z-index: 6; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#dark-mode-toggle:hover {
-    background-color: #313131; /* Light Blue */
-    transform: scale(1.05);
+#dark-mode-toggle i {
+    font-size: 24px;
+    display: none;
+}
+
+#dark-mode-toggle .fa-sun {
+    display: block;
 }
 
 body.dark-mode #dark-mode-toggle {
-    background-color: #929292; /* Dark background */
-    color: #e0e0e0; /* Light text color */
+    background-color: #929292;
+    color: #e0e0e0;
+}
+
+body.dark-mode #dark-mode-toggle .fa-sun {
+    display: none;
+}
+
+body.dark-mode #dark-mode-toggle .fa-moon {
+    display: block;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #313131;
+    transform: scale(1.05);
 }
 
 body.dark-mode #dark-mode-toggle:hover {
-    background-color: #bbbbbb; /* Darker background */
+    background-color: #bbbbbb;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     nav {
         display: flex;
@@ -271,10 +291,10 @@ body.dark-mode #dark-mode-toggle:hover {
         right: -100%;
         height: 100%;
         width: 250px;
-        background-color: rgba(97, 97, 97, 0.9); 
+        background-color: rgba(97, 97, 97, 0.9);
         transition: right 0.3s ease;
         padding-top: 60px;
-        align-items: flex-start; /* Align items from top to bottom */
+        align-items: flex-start;
     }
 
     nav.active {
@@ -283,6 +303,10 @@ body.dark-mode #dark-mode-toggle:hover {
 
     .menu {
         display: block;
+    }
+
+    footer {
+        padding: 10px 0;
     }
 
     nav a {
